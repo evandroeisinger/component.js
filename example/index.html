@@ -7,7 +7,38 @@
 <body>
 <script type="text/javascript" src="../src/component.js"></script>
 <script type="text/javascript">
-  new Component();
+  var user;
+
+  Component({
+    __name: 'user',
+
+    __constructor: function(data) {
+      this.name = data.name;
+    },
+    
+    __prototype: {
+      getName: function() {
+        return this.name;
+      },
+
+      setName: function(_name) {
+        this.name = _name;
+      }
+    }
+  });
+    
+  user = new Component('user', {
+    name: 'Evandro Eisinger'
+  });
+
+  userr = new Component('user', {
+    name: 'Lhama'
+  });
+
+  // user.__subscribe('update', function(data) {
+  //   console.log('user updated', data.name);
+  // });
+
 </script>
 </body>
 </html>
