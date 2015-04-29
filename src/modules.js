@@ -36,7 +36,7 @@
     }
   }
 
-  function _export(_name, _constructor, _prototype) {
+  function _define(_name, _constructor, _prototype) {
     if (!_name || typeof _name !== 'string' || !_name.length)
       throw new Error('Module: Can\'t register without a valid name');
 
@@ -77,7 +77,7 @@
 
   global.modules = {
     modules: [],
-    export: _export,
+    define: _define,
     require: _require
   };
 })(window);

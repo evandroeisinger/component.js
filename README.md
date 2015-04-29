@@ -6,7 +6,7 @@
 var moduleConstructor = function(data) {}
 var modulePrototype = {};
 
-modules.export('ModuleName', moduleConstructor, modulePrototype);
+modules.define('ModuleName', moduleConstructor, modulePrototype);
 ```
 
 **require**:
@@ -35,7 +35,7 @@ var modulePrototype = {
   }
 };
 
-modules.export('ModuleName', moduleConstructor, modulePrototype);
+modules.define('ModuleName', moduleConstructor, modulePrototype);
 ```
 
 **__emmit**:
@@ -55,5 +55,5 @@ var modulePrototype = {
   }
 };
 
-modules.export('ModuleName', moduleConstructor, modulePrototype);
+modules.define('ModuleName', moduleConstructor, modulePrototype);
 ```
