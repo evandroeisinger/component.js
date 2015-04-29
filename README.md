@@ -1,12 +1,12 @@
 # modules.js
 
 
-**define**:
+**export**:
 ```javascript
 var moduleConstructor = function(data) {}
 var modulePrototype = {};
 
-modules.define('ModuleName', moduleConstructor, modulePrototype);
+modules.export('ModuleName', moduleConstructor, modulePrototype);
 ```
 
 **require**:
@@ -35,7 +35,7 @@ var modulePrototype = {
   }
 };
 
-modules.define('ModuleName', moduleConstructor, modulePrototype);
+modules.export('ModuleName', moduleConstructor, modulePrototype);
 ```
 
 **__emmit**:
@@ -55,5 +55,5 @@ var modulePrototype = {
   }
 };
 
-modules.define('ModuleName', moduleConstructor, modulePrototype);
+modules.export('ModuleName', moduleConstructor, modulePrototype);
 ```
