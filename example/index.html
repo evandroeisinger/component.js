@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>component.js</title>
+  <title>modules.js</title>
   <style type="text/css"></style>
 </head>
 <body>
-<script type="text/javascript" src="../src/component.js"></script>
+<script type="text/javascript" src="../src/modules.js"></script>
 <script type="text/javascript">
-  var user;
-
-  Component({
-    __name: 'user',
-
-    __constructor: function(data) {
-      this.name = data.name;
+      
+  modules.define('User', function(_name) {
+    this.name = _name;
+  }, {
+    getName: function() {
+      this.__emmit('retrive', this.name);
+      return this.name;
     },
-    
-    __prototype: {
-      getName: function() {
-        return this.name;
-      },
 
-      setName: function(_name) {
-        this.name = _name;
-      }
+    setName: function(_name) {
+      this.name = _name;
+      this.__emmit('update', _name);
     }
   });
-    
-  user = new Component('user', {
-    name: 'Evandro Eisinger'
+
+  var User = modules.require('User'),
+      user = new User('Evandro Eisinger');
+
+  user.__subscribe(['update', 'retrive'], function(data) {
+    console.log(data);
   });
-
-  userr = new Component('user', {
-    name: 'Lhama'
-  });
-
-  // user.__subscribe('update', function(data) {
-  //   console.log('user updated', data.name);
-  // });
-
 </script>
 </body>
 </html>
