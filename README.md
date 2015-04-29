@@ -1,7 +1,7 @@
 # modules.js
 
 
-**export**:
+**define**:
 ```javascript
 var moduleConstructor = function(data) {}
 var modulePrototype = {};
