@@ -12,14 +12,16 @@ modules.define('ModuleName', moduleConstructor, modulePrototype);
 **require**:
 ```javascript
 var ModuleName = modules.require('ModuleName');
+var moduleName = new ModuleName();
 ```
 
 **__subscribe**:
 ```javascript
-moduleName.__subscribe('eventName', function Callback(data) {});
+// listen to a single event
+moduleName.__subscribe('eventName', function callback(data) {});
 
 // asign to multiple events
-moduleName.__subscribe(['eventName', 'otherEventName'], function Callback(data) {});
+moduleName.__subscribe(['eventName', 'otherEventName'], function callback(data) {});
 
 // also avaiable on constructor and prototype context
 modules.define('ModuleName', function(){
@@ -33,6 +35,7 @@ modules.define('ModuleName', function(){
 
 **__emmit**:
 ```javascript
+// emmit a single event
 moduleName.__emmit('eventName', {});
 
 // also avaiable on constructor and prototype context
