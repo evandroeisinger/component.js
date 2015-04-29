@@ -34,8 +34,6 @@ var modulePrototype = {
     this.__subscribe('eventName', function(){});
   }
 };
-
-modules.define('ModuleName', moduleConstructor, modulePrototype);
 ```
 
 **__emmit**:
@@ -54,6 +52,4 @@ var modulePrototype = {
     this.__emmit('eventName', {});
   }
 };
-
-modules.define('ModuleName', moduleConstructor, modulePrototype);
 ```
